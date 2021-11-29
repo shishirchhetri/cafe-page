@@ -39,10 +39,6 @@ window.onscroll = () =>{
 var icon =document.getElementById('mode');
 icon.onclick= function(){
     document.body.classList.toggle("dark-mode");
-    if(document.body.classList.contains("dark-mode")){
-        
-        
-    }
 }
 
 var icon1 =document.getElementById('mode1');

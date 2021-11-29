@@ -75,7 +75,6 @@ section{
     align-items: center;
     justify-content: space-between;
     padding:1.5rem 7%;
-    border-bottom: var(--border);
     position: fixed;
     top:0; 
     left: 0;
@@ -347,7 +346,6 @@ section{
 }
 
 .galleryContainer{
-    width: 90%;
     padding: 10px;
     border: 1px solid whitesmoke;
     margin: auto;
@@ -370,7 +368,7 @@ section{
     border-radius: 20px;
     margin: 1%;
     height: 100%;
-    width: 400px;
+    max-width: 340px;
     
 }
  .content-gallery:hover{
@@ -378,8 +376,8 @@ section{
 
 }
 .content-gallery .photo{
-    width: 100%;
-    height: 450px;
+    width: 350px;
+    height: 350px;
     display: flex;
     position: relative;
 }
@@ -457,10 +455,12 @@ section{
     border-radius: 10px;
 }
 
+
+/* -------------------menu---------------------- */
+
 .menu-wrapper {
     display: flex;
     flex-direction: column;
-    width: 90%;
     margin: 0 auto;
   }
   
@@ -502,15 +502,14 @@ section{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    min-width: 100%;
   
   }
   
   .menu-inner .menu-content {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
-    border: 1px solid white;
+    max-width: 350px;
+    border: 1px solid var(--white);
     align-items: center;
     padding: 10px;
     margin: 5px;
@@ -518,8 +517,8 @@ section{
   }
   
   .menu-content .image {
-    height: 230px;
-    width: 230px;
+    height: 210px;
+    width: 210px;
     overflow: hidden;
     padding: 5px;
   
@@ -581,7 +580,7 @@ section{
   }
 
   .content-detail .cart-btn:hover{
-      letter-spacing: 2px;
+      letter-spacing: 1px;
   }
 
   .menu-inner .menu-content:hover .image img{
@@ -698,70 +697,53 @@ section{
     letter-spacing: 2px;
 }
 /* ---------------book a table-------------------- */
-/* #reservation{
-    height: 85vh;
+#reservation{
     width: 85%;
     margin: auto;
-    background-color: rgb(236, 230, 230);
+    background-color: var(--bg);
     justify-content: center;
+    padding: 20px 10px;
     position: relative;
+    box-shadow:5px 5px 10px 5px rgba(117, 111, 111, 0.4);
+
 }
 
-.res-container{
-   position: absolute;
-   top: 5%;
-   left: 15%;
-   display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
+
 .content{
-    flex-basis: 50%;
-    height: 100%;
-    margin: 10px;
-    padding: 20px;
-}
-.content>img{
-    margin-left: 30px;
-}
-.res-img img{
-    flex-basis: 50%;
-    margin-top: 20%;
-    
-}
-.content h2{
-    color: white;
-    font-weight: bolder;
-    letter-spacing: 2px;
-    text-align: center;
+    max-width: 80%;
+    margin: 0px auto;
+    padding: 0px 5px;
+    justify-content: right;
+   position: relative;
 }
 
-.content>img{
-    background-color: transparent;
-    padding: 10px;
-    
+#reservation form{
     align-items: center;
-    justify-content: center;
-   
+    max-width: 500px;
+    margin: auto;
+    
 }
 .res-img img{
-    height: fit-content;
-    width: 100%;
+  position: absolute;
+  top: 20%;
+  height: 50%;
+  left: 0;
+  z-index: 1;
 }
-form{
-    align-items: center;
-   
-}
-form input{
-    padding: 10px;
+#reservation form input{
+    padding: 10px 10px;
     margin: 10px;
     border: none;
-    line-height: 1.5;
+    line-height: 2;
     width: 100%;
-    border-radius: 10px;
+    color:var(--white);
+    background:var(--bg);
+    border:var(--border);
+
+
 }
 form input[placeholder],textarea[placeholder]{
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 
 input:focus,textarea:focus{
@@ -779,23 +761,34 @@ textarea{
     border-radius: 10px;
     height: 200px;
     resize: none;
+    color:var(--white);
+    background:var(--bg);
+    border:var(--border);
 }
-.btn{
-    height: 20px;
-    width: 100%;
-}
-.btn button{
-    width: 50%;
-    background-color: green;
-    padding: 10px;
-    color: white;
+ #reservation form .btn{
+    margin: auto;
+    min-width: 100px;
+    align-items: center;
     text-align: center;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-} */
-
-
+}
+.btn button{
+    background-color: var(--main-color);
+    padding: 5px;
+    color: var(--white);
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+.btn button:hover{
+    letter-spacing: 1px;
+}
+/* --------------------blogs--------------- */
 .blogs .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -957,7 +950,9 @@ textarea{
     color:var(--main-color);
 }
 
-
+.btn{
+    border-radius: 10px;
+}
 
 @media (min-width:991px) and (max-width:1200px) {
     .header{
@@ -1025,6 +1020,9 @@ textarea{
     #menu-btn{
         display: inline-block;
     }
+    #mode1{
+        display: none;
+    }
 
     .header .navbar{
         position: absolute;
@@ -1060,8 +1058,12 @@ textarea{
    }
 
    .nav-icon{
-       margin: 0 10px;
+       margin: 0 5px;
        display: flex;
+   }
+   .nav-icon a{
+    font-size: 20px;
+    transform: translateY(-65%);
    }
    .icons #book-btn,.icons #search-btn,.icons #mode, .icons #user{
        display: none;
@@ -1084,11 +1086,10 @@ textarea{
 }
 
 @media (max-width:450px){
+.header{
+    width: 100%!important;
+}
 
-    html{
-        font-size: 50%;
-        letter-spacing: 0px;
-    }
     .header .icons div{
         margin:1px 5px;
 
@@ -1096,12 +1097,7 @@ textarea{
     #main-text{
         font: 24px;
     }
-    header{
-        width: 100vw !important;
-    }
-    .content-gallery .photo{
-        height: 350px;
-    }
+
    .quote{
        margin-top: -15px;
    }
@@ -1114,6 +1110,44 @@ textarea{
    .other-details.achieve{
        margin-top: -20px;
    }
+   .galleryContainer{
+       border: 0;
+       box-shadow: none;
+   }
+   .content-gallery{
+       max-width: 320px;
+       height: 100%;
+       margin: 0;
+       padding: 2px;
+   }
+ 
   
+.content-gallery .photo{
+    width: 300px;
+    height: 300px;
+}
+.heading{
+  padding: 5px;
+  font-size: 2.5rem;
+  margin: -2px;
+}
+section{
+    padding: 10px;
+}
+textarea{
+  
+    width: 100%;
    
+    height: 120px;
+   
+}
+#reservation .btn{
+    line-height: 1;
+}
+.btn button{
+    padding: 2px;
+    font-size: 14px;
+    width: 100%;
+    line-height: 1;
+}
 }
