@@ -44,8 +44,10 @@ icon.onclick= function(){
 var icon1 =document.getElementById('mode1');
 icon1.onclick= function(){
     document.body.classList.toggle("dark-mode");
-    if(document.body.classList.contains("dark-mode")){
-        
-        
-    }
+    // if(document.body.classList.contains("dark-mode")){
+    //     document.getElementById('mode1').className="fab fa-moon";
+    // }
+    // else{
+    //     document.getElementById('mode1').className="fab fa-sun";
+    // }
 }
